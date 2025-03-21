@@ -5,7 +5,6 @@ import { sports } from '@/app/lib/sports';
 import { SportType } from '@/types/SportType';
 import Image from 'next/image';
 import { useSport } from '@/context/SportContext';
-import { LinkType } from '@/types/LinkType';
 import { getLinksService } from '@/services/getLinksService';
 import { useLinks } from '@/context/LinkContext';
 
@@ -38,21 +37,23 @@ const Navbar = () => {
 
    return (
       <>
-         <div className="mb-5">
-            <h2 className="inline px-3 text-xl">SPORTS TICKERS</h2>
+         <div className="">
+            <h2 className="inline px-3 text-xl text-white font-bold bona-nova-sc-regular">
+               SPORT TICKERS
+            </h2>
             <ul className="inline-flex">
                {sportsList.map((sport) => (
-                  <li key={sport.name} className="text-white px-3 text-xl">
+                  <li key={sport.name} className="text-white text-sm">
                      <button
-                        className="hover:cursor-pointer hover:text-blue-300"
+                        className="hover:cursor-pointer p-3 pr-5 hover:bg-white/7 rounded-md m-2 mx-0"
                         onClick={() => handleSportSelect(sport.name)}
                      >
                         <Image
                            src={`${sport.icon}`}
                            alt={sport.name}
-                           width={20}
-                           height={20}
-                           className="inline"
+                           width={25}
+                           height={25}
+                           className="inline mx-1 align-middle font-bold"
                         ></Image>
                         {sport.name}
                      </button>

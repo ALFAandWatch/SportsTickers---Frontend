@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { SportProvider } from '@/context/SportContext';
 import { LinksProvider } from '@/context/LinkContext';
+import { CountryProvider } from '@/context/CountryContext';
 
 export const metadata: Metadata = {
    title: 'Sports Ticker',
@@ -15,10 +16,23 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="en">
-         <head></head>
-         <body className={`antialiased bg-[#1c2c40] px-8 py-5`}>
+         <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+               rel="preconnect"
+               href="https://fonts.gstatic.com"
+               crossOrigin="anonymous"
+            />
+            <link
+               href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap"
+               rel="stylesheet"
+            />
+         </head>
+         <body className={`antialiased bg-[#1c2c40] px-8 pt-1`}>
             <SportProvider>
-               <LinksProvider>{children}</LinksProvider>
+               <LinksProvider>
+                  <CountryProvider>{children}</CountryProvider>
+               </LinksProvider>
             </SportProvider>
          </body>
       </html>

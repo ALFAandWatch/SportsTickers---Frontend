@@ -10,7 +10,7 @@ type SportContextType = {
 const SportContext = createContext<SportContextType | undefined>(undefined);
 
 export const SportProvider = ({ children }: { children: ReactNode }) => {
-   const [selectedSport, setSelectedSport] = useState<string>('');
+   const [selectedSport, setSelectedSport] = useState<string>('baseball');
 
    return (
       <SportContext.Provider value={{ selectedSport, setSelectedSport }}>

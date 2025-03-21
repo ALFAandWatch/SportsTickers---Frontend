@@ -1,3 +1,5 @@
+'use client';
+
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { LinkType } from '@/types/LinkType'; // Assuming you have a Link type
 

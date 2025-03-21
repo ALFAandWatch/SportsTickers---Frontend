@@ -1,1 +1,12 @@
 @import 'tailwindcss';
+
+.iconInvert > img:hover {
+   filter: invert();
+}
+
+/***************************FONT***********************/
+.bona-nova-sc-regular {
+   font-family: 'Bona Nova SC', serif;
+   font-weight: 700;
+   font-style: normal;
+}
