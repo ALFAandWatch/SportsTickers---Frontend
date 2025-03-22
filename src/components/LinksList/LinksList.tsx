@@ -3,7 +3,7 @@
 import { useCountry } from '@/context/CountryContext';
 import { useLinks } from '@/context/LinkContext';
 import LinkButton from '../LinkButton/LinkButton';
-import Link from 'next/link';
+import Image from 'next/image';
 
 const LinksList = () => {
    const { linksList } = useLinks();
@@ -11,7 +11,7 @@ const LinksList = () => {
 
    const CountryFlag = ({ flagCode }: { flagCode: string }) => {
       return (
-         <img
+         <Image
             src={`https://flagcdn.com/w320/${flagCode.toLowerCase()}.png`}
             width="40"
             height="70"

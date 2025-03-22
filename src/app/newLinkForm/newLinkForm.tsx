@@ -11,7 +11,7 @@ import Link from 'next/link';
 import Swal from 'sweetalert2';
 import { useRouter } from 'next/navigation';
 
-const newLinkForm = () => {
+const NewLinkForm = () => {
    const [allCountries, setAllCountries] = useState<CountryType[]>([]);
    const [sportsList, setSportsList] = useState<SportType[]>([]);
    const router = useRouter();
@@ -169,4 +169,4 @@ const newLinkForm = () => {
    );
 };
 
-export default newLinkForm;
+export default NewLinkForm;

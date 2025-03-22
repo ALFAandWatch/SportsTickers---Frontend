@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import CountryList from '../CountryList/CountryList';
 import LinksList from '../LinksList/LinksList';
 

@@ -30,7 +30,7 @@ const Navbar = () => {
          setLinksList(fetchedLinks);
       };
       fetchLinks();
-   }, [selectedSport]);
+   }, [selectedSport, setLinksList]);
 
    const handleSportSelect = (SportName: string) => {
       setSelectedSport(SportName);

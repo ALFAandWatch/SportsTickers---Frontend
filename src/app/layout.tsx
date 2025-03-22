@@ -3,11 +3,14 @@ import './globals.css';
 import { SportProvider } from '@/context/SportContext';
 import { LinksProvider } from '@/context/LinkContext';
 import { CountryProvider } from '@/context/CountryContext';
+import { Inter } from 'next/font/google';
 
 export const metadata: Metadata = {
    title: 'Sports Ticker',
    description: 'The most complete livescore library!',
 };
+
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
    children,
@@ -15,9 +18,9 @@ export default function RootLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <html lang="en">
+      <html lang="en" className={inter.className}>
          <head>
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
                rel="preconnect"
                href="https://fonts.gstatic.com"
@@ -26,7 +29,7 @@ export default function RootLayout({
             <link
                href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
                rel="stylesheet"
-            />
+            /> */}
          </head>
          <body className={`antialiased bg-[#1c2c40] px-8 pt-1`}>
             <SportProvider>

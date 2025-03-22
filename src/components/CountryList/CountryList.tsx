@@ -4,6 +4,7 @@ import { useCountry } from '@/context/CountryContext';
 import { useLinks } from '@/context/LinkContext';
 import { useSport } from '@/context/SportContext';
 import { CountryType } from '@/types/CountryType';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const CountryList = () => {
@@ -19,7 +20,7 @@ const CountryList = () => {
             return;
          }
 
-         let countries: CountryType[] = [];
+         const countries: CountryType[] = [];
          linksList.forEach((link) => {
             if (
                link.country &&
@@ -39,7 +40,7 @@ const CountryList = () => {
 
    const CountryFlag = ({ flagCode }: { flagCode: string }) => {
       return (
-         <img
+         <Image
             src={`https://flagcdn.com/w320/${flagCode.toLowerCase()}.png`}
             width="40"
             height="70"
