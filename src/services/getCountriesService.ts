@@ -3,7 +3,7 @@ import axios from 'axios';
 export const getCountriesService = async () => {
    try {
       const response = await axios.get(
-         `odd-dorthy-alfaandwatch-324c2a9f.koyeb.app/countries`
+         `postgresql://postgres:AjySuErTVNdSI5XJ@db.artrohzjovrnasjczoxx.supabase.co:5432/postgres/countries`
       );
       return response.data;
    } catch (error) {

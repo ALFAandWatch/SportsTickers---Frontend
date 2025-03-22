@@ -4,7 +4,7 @@ import axios from 'axios';
 export const addLinkService = async (data: ILinkDto) => {
    try {
       const response = await axios.post(
-         `odd-dorthy-alfaandwatch-324c2a9f.koyeb.app/links`,
+         `postgresql://postgres:AjySuErTVNdSI5XJ@db.artrohzjovrnasjczoxx.supabase.co:5432/postgres/links`,
          data
       );
       return response.data;
