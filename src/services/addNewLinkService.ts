@@ -3,7 +3,10 @@ import axios from 'axios';
 
 export const addLinkService = async (data: ILinkDto) => {
    try {
-      const response = await axios.post(`http://localhost:7788/links`, data);
+      const response = await axios.post(
+         `odd-dorthy-alfaandwatch-324c2a9f.koyeb.app/links`,
+         data
+      );
       return response.data;
    } catch (error) {
       console.log(error);
