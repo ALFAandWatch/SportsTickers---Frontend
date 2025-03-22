@@ -2,6 +2,8 @@
 
 import { useCountry } from '@/context/CountryContext';
 import { useLinks } from '@/context/LinkContext';
+import LinkButton from '../LinkButton/LinkButton';
+import Link from 'next/link';
 
 const LinksList = () => {
    const { linksList } = useLinks();
@@ -29,7 +31,32 @@ const LinksList = () => {
 
                {selectedCountry?.name}
             </div>
-            <div className="bg-[#f1f3f7] h-full m-4 mt-0 rounded-md p-1 "></div>
+            <div className="bg-[#f1f3f7] h-full m-4 mt-0 rounded-md p-4 px-10 ">
+               <ul>
+                  {selectedCountry ? (
+                     linksList.map(
+                        (link) =>
+                           link.country == selectedCountry && (
+                              <li
+                                 key={link.id}
+                                 className="w-full p-3 m-1 my-3 rounded-md shadow-[0px_2px_10px_rgba(0,0,0,0.25)] hover:bg-gray-200 hover:cursor-pointer"
+                              >
+                                 <a href={`${link.url}`} target="_blank">
+                                    <LinkButton
+                                       league={link.league}
+                                       url={link.url}
+                                    />
+                                 </a>
+                              </li>
+                           )
+                     )
+                  ) : (
+                     <p className="w-full text-center p-3 rounded-md shadow-[0px_2px_10px_rgba(0,0,0,0.25)]">
+                        No se encontraron links para este deporte.
+                     </p>
+                  )}
+               </ul>
+            </div>
          </div>
       </>
    );

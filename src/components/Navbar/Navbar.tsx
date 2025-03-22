@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useSport } from '@/context/SportContext';
 import { getLinksService } from '@/services/getLinksService';
 import { useLinks } from '@/context/LinkContext';
+import Link from 'next/link';
 
 const Navbar = () => {
    const [sportsList, setSportsList] = useState<SportType[]>([]);
@@ -38,7 +39,7 @@ const Navbar = () => {
    return (
       <>
          <div className="">
-            <h2 className="inline px-3 text-xl text-white font-bold bona-nova-sc-regular">
+            <h2 className="alumni-sans-pinstripe-regular inline px-3 text-3xl align-middle text-blue-400/60 font-bold">
                SPORT TICKERS
             </h2>
             <ul className="inline-flex">
@@ -60,6 +61,12 @@ const Navbar = () => {
                   </li>
                ))}
             </ul>
+            <Link
+               href="/newLinkForm"
+               className="hover:cursor-pointer p-4 pt-3 pr-5 text-white bg-blue-400/60 hover:brightness-105 rounded-md"
+            >
+               +Link
+            </Link>
          </div>
       </>
    );

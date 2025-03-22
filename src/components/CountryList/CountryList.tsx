@@ -59,7 +59,7 @@ const CountryList = () => {
                <li key={country.id}>
                   <button
                      onClick={() => handleOnClick(country)}
-                     className="w-full p-2 uppercase bg-[#f1f3f7] text-left rounded-md font-normal text-md hover:cursor-pointer hover:bg-blue-600/40 hover:text-white hover:shadow-[5px_5px_10px_rgba(255,255,255,0.10)]"
+                     className="w-full p-3 mb-2 uppercase bg-[#f1f3f7] text-left rounded-md font-normal text-md hover:cursor-pointer hover:bg-blue-600/40 hover:text-white"
                   >
                      <CountryFlag flagCode={country.flagCode} />
                      {country.name}
